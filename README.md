@@ -1,1 +1,1 @@
-Used to run the WITHOUT corporation terminal online.
+Use to run the WITHOUT corporation terminal online.
