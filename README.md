@@ -1,1 +1,1 @@
-Activate to run the WITHOUT corporation terminal online.
+Activates the WITHOUT corporation terminal online.
