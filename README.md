@@ -1,1 +1,1 @@
-Activates WITHOUT corporation's online terminal.
+Activates the archived version of WITHOUT corporation online terminal.
