@@ -1,7 +1,7 @@
 body {
     background: #111;
     color: #ddd;
-    margin: 5 auto;
+    margin: 0 auto;
     max-width: 900px;
     text-align: center;
 }
@@ -14,17 +14,17 @@ a {
 #games {
     display: flex;
     flex-flow: row wrap;
-    margin: 5 auto;
-    max-width: 900px;
+    margin: 0 auto;
+    max-width: 600px;
 }
 
 #games h2 {
-    flex: 450px;
+    flex: 300px;
 }
 
 #games h2 img {
     display: block;
-    margin: 5 auto;
+    margin: 0 auto;
 }
 
 /* Game page */
@@ -36,15 +36,15 @@ html, body {
     display: flex;
     flex-flow: column;
     height: 100%;
-    margin: 5 auto;
-    max-width: 900px;
+    margin: 0 auto;
+    max-width: 640px;
 }
 
 #heading, #arthurmodes {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    max-width: 900px;
+    max-width: 640px;
 }
 
 #heading h1, #heading p {
