@@ -90,6 +90,7 @@ html, body {
 
 canvas {
     display: block;
+    overflow: scroll;
 }
 
 #textinput {
