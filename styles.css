@@ -97,7 +97,7 @@ canvas {
     left: -10000px;
 }
 
-button, .myButton {
+button, .arcadeButton {
     background-color: #4CAF50;
     border: none;
     color: black;
