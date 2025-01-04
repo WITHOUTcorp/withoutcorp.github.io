@@ -78,7 +78,7 @@ html, body {
 
 @media (max-width: 500px) {
     #arthurmodes p {
-        font-size: 13px;
+        font-size: 14px;
     }
     .arthurfull {
         display: none;
@@ -90,7 +90,6 @@ html, body {
 
 canvas {
     display: block;
-    overflow: scroll;
 }
 
 #textinput {
