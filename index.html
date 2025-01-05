@@ -43,12 +43,17 @@
                             const val = store.get("/saves/with.scr").then((result) => {
                                 let newStr = String.fromCharCode(...Object.values(result.contents)); /* Buffer.from(Object.values(result.contents)).toString(); */
                                 console.log(newStr);
+                                /*
                                 newStr.contents.split(/\n/).forEach((el) => {
                                     let p = document.createElement('p');
                                     let text = document.createTextNode(el);
                                     p.appendChild(text);
-                                    main.appendChild(p)
+                                    main.appendChild(p);
                                 });
+                                */
+                                var html = '<html><title>WITHOUT script</title><head></head><body><p>' + newStr + '</p></body></html>';
+                                var uri = "data:text/html," + encodeURIComponent(html);
+                                var newWindow = window.open(uri);
                             });
                         };
                     </script>
