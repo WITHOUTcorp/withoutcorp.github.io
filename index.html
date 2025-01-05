@@ -48,11 +48,11 @@
                                     let p = document.createElement('p');
                                     let text = document.createTextNode(el);
                                     p.appendChild(text);
-                                    brStr += ('<p>' + el + '</p>')
+                                    brStr += (el + '<br>');
                                 });
                                 var fullStr = ''
                                 brStr.split(' ').forEach((el) => {
-                                    fullStr += (el + '&nbsp;')
+                                    fullStr += (el + '&nbsp;');
                                 });
                                 /*
                                 var html = '<html><title>WITHOUT script</title><head></head><body><p>' + newStr + '</p></body></html>';
@@ -61,9 +61,8 @@
                                 */
                                 var child = window.open("about:blank");
                                 var html = '<html><title>WITHOUT script</title>' +
-                                    '<head></head>' +
-                                    '<body><link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />' +
-                                    fullStr + '</body></html>';
+                                    '<head><link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" /></head>' +
+                                    '<body><p>' + fullStr + '</p></body></html>';
                                 child.document.write(html);
                                 child.document.close();
                             });
