@@ -43,12 +43,16 @@
                             const val = store.get("/saves/with.scr").then((result) => {
                                 let newStr = String.fromCharCode(...Object.values(result.contents)); /* Buffer.from(Object.values(result.contents)).toString(); */
                                 console.log(newStr);
-                                var fullStr = ''
+                                var brStr = ''
                                 newStr.split(/\n/).forEach((el) => {
                                     let p = document.createElement('p');
                                     let text = document.createTextNode(el);
                                     p.appendChild(text);
-                                    fullStr += ('<p>' + el + '</p>')
+                                    brStr += ('<p>' + el + '</p>')
+                                });
+                                var fullStr = ''
+                                brStr.split(' ').forEach((el) => {
+                                    fullStr += (el + '&nbsp;')
                                 });
                                 /*
                                 var html = '<html><title>WITHOUT script</title><head></head><body><p>' + newStr + '</p></body></html>';
