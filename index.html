@@ -8,10 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/idb@8/build/umd.js"></script>
     <script>
         var db;
-        const DB_NAME = '/saves'
+        const DB_NAME = '/saves';
         const DB_VERSION = 21;
         const DB_STORE_NAME = "FILE_DATA";
-        idb.openDB(DB_NAME, DB_VERSION).then((result) => { db = result } );
+        idb.openDB(DB_NAME, DB_VERSION).then((result) => { db = result; } );
     </script>
 </head>
 <body>
@@ -23,27 +23,32 @@
         <div id="inner">
             <div id="game">
                 <div id="arcade" style="visibility:hidden;">
+                    <main>
+                        <button id="openScript" class="arcadeButton">Open Script</button>
+                    </main>
                     <script>
                         setTimeout(function(){
                             document.getElementById('arcade').style.visibility = "visible";
-                        },5000);
-                    </script>
-                    <input type="button" id="openScript" value="Open Script" class="arcadeButton" />
-                    <script>
-                        var startButton = document;
-                        .querySelector("#openScript");
-                        .addEventListener("click", () => {
-                            this.openScript();
-                        });
+                        }, 5000);
+
+                        const main = document.getElementsByTagName('main')[0];
+                        const openScript = document.getElementById('openScript')
+                        openScript.addEventListener('click', show_script);
+                        
                         // Function that start game
-                        openScript = () => {
+                        function show_script () {
                             console.log("Placeholder");
                             // Let us open our database
-                            const tx = db.transaction(DB_STORE_NAME, /* '/saves' */ 'readwrite');
-                            const store = tx.objectStore(DB_STORE_NAME /* '/saves' */);
+                            const tx = db.transaction(DB_STORE_NAME, 'readwrite');
+                            const store = tx.objectStore(DB_STORE_NAME);
                             const val = store.get("/saves/with.scr").then((result) => {
                                 let newStr = Buffer.from(Object.values(result.contents)).toString();
-                                /* result */ newStr.contents.split(/\n/).forEach((el) => { let p = document.createElement('p'); let text = document.createTextNode(el); p.appendChild(text); main.appendChild(p)})
+                                newStr.contents.split(/\n/).forEach((el) => {
+                                    let p = document.createElement('p');
+                                    let text = document.createTextNode(el);
+                                    p.appendChild(text);
+                                    main.appendChild(p)
+                                });
                             });
                         };
                     </script>
