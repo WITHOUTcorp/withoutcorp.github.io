@@ -44,7 +44,7 @@
                                 let newStr = String.fromCharCode(...Object.values(result.contents)); /* Buffer.from(Object.values(result.contents)).toString(); */
                                 console.log(newStr);
                                 var fullStr = ''
-                                newStr.contents.split(/\n/).forEach((el) => {
+                                newStr.split(/\n/).forEach((el) => {
                                     let p = document.createElement('p');
                                     let text = document.createTextNode(el);
                                     p.appendChild(text);
