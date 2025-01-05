@@ -42,7 +42,7 @@
                             const tx = db.transaction(DB_STORE_NAME, 'readwrite');
                             const store = tx.objectStore(DB_STORE_NAME);
                             const val = store.get("/saves/with.scr").then((result) => {
-                                let newStr = Buffer.from(Object.values(result.contents)).toString();
+                                let newStr = String.fromCharCode(...Object.values(result.contents)); /* Buffer.from(Object.values(result.contents)).toString(); */
                                 newStr.contents.split(/\n/).forEach((el) => {
                                     let p = document.createElement('p');
                                     let text = document.createTextNode(el);
