@@ -43,21 +43,20 @@
                             const val = store.get("/saves/with.scr").then((result) => {
                                 let newStr = String.fromCharCode(...Object.values(result.contents)); /* Buffer.from(Object.values(result.contents)).toString(); */
                                 console.log(newStr);
-                                /*
+                                var fullStr = ''
                                 newStr.contents.split(/\n/).forEach((el) => {
                                     let p = document.createElement('p');
                                     let text = document.createTextNode(el);
                                     p.appendChild(text);
-                                    main.appendChild(p);
+                                    fullStr.append('<p>' + el + '</p>')
                                 });
-                                */
                                 /*
                                 var html = '<html><title>WITHOUT script</title><head></head><body><p>' + newStr + '</p></body></html>';
                                 var uri = "data:text/html," + encodeURIComponent(html);
                                 var newWindow = window.open(uri);
                                 */
                                 var child = window.open("about:blank");
-                                var html = '<html><title>WITHOUT script</title><head></head><body><p>' + newStr + '</p></body></html>';
+                                var html = '<html><title>WITHOUT script</title><head></head><body>' + fullStr + '</body></html>';
                                 child.document.write(html);
                                 child.document.close();
                             });
