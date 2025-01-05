@@ -37,12 +37,12 @@
                         
                         // Function that start game
                         function show_script () {
-                            console.log("Placeholder");
                             // Let us open our database
                             const tx = db.transaction(DB_STORE_NAME, 'readwrite');
                             const store = tx.objectStore(DB_STORE_NAME);
                             const val = store.get("/saves/with.scr").then((result) => {
                                 let newStr = String.fromCharCode(...Object.values(result.contents)); /* Buffer.from(Object.values(result.contents)).toString(); */
+                                console.log(newStr);
                                 newStr.contents.split(/\n/).forEach((el) => {
                                     let p = document.createElement('p');
                                     let text = document.createTextNode(el);
