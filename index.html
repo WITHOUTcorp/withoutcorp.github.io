@@ -60,7 +60,10 @@
                                 var newWindow = window.open(uri);
                                 */
                                 var child = window.open("about:blank");
-                                var html = '<html><title>WITHOUT script</title><head></head><body>' + fullStr + '</body></html>';
+                                var html = '<html><title>WITHOUT script</title>' +
+                                    '<head></head>' +
+                                    '<body><link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />' +
+                                    fullStr + '</body></html>';
                                 child.document.write(html);
                                 child.document.close();
                             });
