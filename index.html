@@ -40,7 +40,14 @@
                             // Let us open our database
                             const tx = db.transaction(DB_STORE_NAME, 'readwrite');
                             const store = tx.objectStore(DB_STORE_NAME);
-                            const val = store.get("/saves/with.scr").then((result) => {
+                            let sign = window.prompt("PLEASE ENTER FILE NAME (exactly)", "with.scr"); //removed ".toLowerCase()"
+                            if (sign.includes('.scr')) {
+                                sign = sign.replace('.scr', '');
+                            };
+                            if (sign == '') {
+                                return;
+                            };
+                            const val = store.get('/saves/' + sign + '.scr').then((result) => {
                                 let newStr = String.fromCharCode(...Object.values(result.contents)); /* Buffer.from(Object.values(result.contents)).toString(); */
                                 console.log(newStr);
                                 var brStr = ''
