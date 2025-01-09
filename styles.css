@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
 body {
     background: #111;
     color: #ddd;
@@ -108,27 +110,28 @@ canvas {
 } */
 
 .arcadeButton {
+    font-family: DotGothic16;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 20px;
-    color: white !important;
+    color: #ECF0F1 !important;
     
     width: 120px;
-    height: 48px;
+    height: 46px;
     
-    padding-top: 8px; 
-    background-color: #ECF0F1;
+    padding-top: 1px; 
+    background-color: #ffffff;
     
     border-width: thin;
-    margin-right: 2px;
+    margin-right: 5px;
  
-    background: #1B1D21;
+    background: #1e1e2c;
     border-radius: 16px;
-    border-color: #1B1D21;
+    border-color: #ecf0f157;
 }
 
 .arcadeButton:focus {
-   color: white !important;
+   color: #ECF0F1 !important;
    background: #19212A;
 }
 
