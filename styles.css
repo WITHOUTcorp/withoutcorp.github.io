@@ -97,7 +97,7 @@ canvas {
     left: -10000px;
 }
 
-.arcadeButton {
+/* .arcadeButton {
     background-color: #4CAF50;
     border: none;
     color: black;
@@ -105,4 +105,34 @@ canvas {
     text-align: center;
     text-decoration: none;
     font-size: 16px;
+} */
+
+.arcadeButton {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: white !important;
+    
+    width: 120px;
+    height: 48px;
+    
+    padding-top: 8px; 
+    background-color: #ECF0F1;
+    
+    border-width: thin;
+    margin-right: 2px;
+ 
+    background: #1B1D21;
+    border-radius: 16px;
+    border-color: #1B1D21;
 }
+
+.arcadeButton:focus {
+   color: white !important;
+   background: #19212A;
+}
+
+/* .arcadeButton:visited {
+   color: white !important;
+   background: #35BC27;
+} */
