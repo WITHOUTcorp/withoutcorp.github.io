@@ -110,7 +110,7 @@ canvas {
 } */
 
 .arcadeButton {
-    letter-spacing: -2px;
+    word-spacing: -5px;
     font-family: DotGothic16;
     font-weight: 500;
     font-size: 15px;
