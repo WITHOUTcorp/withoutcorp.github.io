@@ -114,7 +114,7 @@ canvas {
     font-weight: 500;
     font-size: 15px;
     line-height: 20px;
-    word-spacing: -5px;
+    word-spacing: -7.5px;
     color: #ECF0F1 !important;
     
     width: 120px;
@@ -129,6 +129,10 @@ canvas {
     background: #1e1e2c;
     border-radius: 16px;
     border-color: #ecf0f157;
+}
+
+pre {
+    font-family: DotGothic16;
 }
 
 .arcadeButton:focus {
