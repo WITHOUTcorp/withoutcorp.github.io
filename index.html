@@ -68,8 +68,13 @@
                                 */
                                 var child = window.open("about:blank");
                                 var html = '<html><title>WITHOUT script</title>' +
-                                    '<head><link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" /></head>' +
-                                    '<body><p>' + fullStr + '</p></body></html>';
+                                    '<head><link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.4/dist/terminal.min.css" />' +
+                                    '<button type="button" id="save" title="Save as text file">Save</button>' +
+                                    '<script type="text/javascript">' + 
+                                    'document.getElementById("save").onclick = function() {' +
+                                    ' var content = document.getElementById("source").value;' +
+                                    ' window.open("data:application/txt," + encodeURIComponent(content), "_self");' +
+                                    '};<' + '/script></head>' + '<body><p id="source">' + fullStr + '</p></body></html>';
                                 child.document.write(html);
                                 child.document.close();
                             });
