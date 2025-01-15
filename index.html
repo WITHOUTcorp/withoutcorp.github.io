@@ -72,7 +72,7 @@
                                     '<button type="button" id="save" title="Save as text file">Save</button>' +
                                     '<script type="text/javascript">' + 
                                     'document.getElementById("save").onclick = function() {' +
-                                    ' var content = document.getElementById("source");' +
+                                    ' var content = document.getElementById("source").innerHTML;' +
                                     ' let blobdtMIME = new Blob([content], { type: "text/plain" });' +
                                     ' let url = URL.createObjectURL(blobdtMIME);' +
                                     ' let anele = document.createElement("a");' +
