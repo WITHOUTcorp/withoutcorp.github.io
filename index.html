@@ -72,8 +72,18 @@
                                     '<button type="button" id="save" title="Save as text file">Save</button>' +
                                     '<script type="text/javascript">' + 
                                     'document.getElementById("save").onclick = function() {' +
-                                    /* ' var content = document.getElementById("source").innerHTML;' + */
-                                    ' var content = "' + newStr + "';" +
+                                    ' var content = document.getElementById("source").innerHTML;' +
+                                    ' var brStr = "";'
+                                    ' content.split("<br>").forEach((el) => {' +
+                                    '  let p = document.createElement("p");' +
+                                    '  let text = document.createTextNode(el);' +
+                                    '  p.appendChild(text);' +
+                                    '  brStr += (el + "\\n");' +
+                                    ' });' +
+                                    ' var fullStr = ""' +
+                                    ' brStr.split("&nbsp;").forEach((el) => {' +
+                                    '  fullStr += (el + " ");' +
+                                    ' });' +
                                     ' let blobdtMIME = new Blob([content], { type: "text/plain" });' +
                                     ' let url = URL.createObjectURL(blobdtMIME);' +
                                     ' let anele = document.createElement("a");' +
@@ -88,7 +98,7 @@
                     </script>
                 </div>
                 <canvas id="canvas" height="500"></canvas>
-                <textarea id="textinput" autocapitalize="on" rows="1"></textarea>
+                <textarea id="textinput" autocapitalize="off" rows="1"></textarea>
             </div>
         </div>
     </div>
