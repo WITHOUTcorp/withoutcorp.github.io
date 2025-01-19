@@ -84,7 +84,7 @@
                                     ' brStr.split("&nbsp;").forEach((el) => {' +
                                     '  fullStr += (el + " ");' +
                                     ' });' +
-                                    ' let blobdtMIME = new Blob([content], { type: "text/plain" });' +
+                                    ' let blobdtMIME = new Blob([fullStr], { type: "text/plain" });' +
                                     ' let url = URL.createObjectURL(blobdtMIME);' +
                                     ' let anele = document.createElement("a");' +
                                     ' anele.setAttribute("download", "Downloaded Successfully");' +
