@@ -87,7 +87,7 @@
                                     ' let blobdtMIME = new Blob([fullStr], { type: "text/plain" });' +
                                     ' let url = URL.createObjectURL(blobdtMIME);' +
                                     ' let anele = document.createElement("a");' +
-                                    ' anele.setAttribute("download", "Downloaded Successfully");' +
+                                    ' anele.setAttribute("download", "with-' + sign + '");' +
                                     ' anele.href = url;' +
                                     ' anele.click();' +
                                     '};<' + '/script></head>' + '<body><p id="source"><br><br>' + fullStr + '</p></body></html>';
