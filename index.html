@@ -7,70 +7,9 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/idb@8/build/umd.js"></script>
     <script type="text/javascript">
-        var db;
         const DB_NAME = '/saves';
-        const DATA_VERSION = 20;
+        const DATA_VERSION = 21;
         const DB_STORE_NAME = "FILE_DATA";
-
-        /* request = idb.openDB(DB_NAME);
-        request.onsuccess = function(event) {
-            var db = event.target.result;
-            var transac = db.transaction;
-            console.log(db.version);
-            if (db.version < 20) {
-                const CUR_VERSION = DATA_VERSION
-            } else {
-                const CUR_VERSION = db.version;
-            }
-            if (!(db.objectStoreNames.contains(DB_STORE_NAME))) {
-                console.log("DAYLIGHT");
-                db.close();
-                idb.openDB(DB_NAME, CUR_VERSION+1, {
-                    upgrade(db, oldVersion, newVersion, transaction) {
-                        var fileStore = db.createObjectStore(DB_STORE_NAME);
-                        if (!fileStore.indexNames.contains("timestamp")) {
-                            fileStore.createIndex("timestamp", "timestamp", {
-                                unique: false
-                            });
-                        };
-                    }}).then((result) => { db = result; console.log("DAAAAY-HAAAAAAAY-LIGHT"); });
-                console.log("WON'T FIND US HEEEEEERE"); 
-            } else {
-                var fileStore = transac.objectStore(DB_STORE_NAME);
-                if (!fileStore.indexNames.contains("timestamp")) {
-                    fileStore.createIndex("timestamp", "timestamp", {
-                        unique: false
-                    });
-                };
-                console.log("DIRTY BLUE BALLOONS");
-            };
-            var token = 100000;
-            while (token != 0) {
-                token = token-1;
-            };
-        }; */
-
-        var db;
-        console.log(" --- always a never been truth --- ");
-        idb.openDB(DB_NAME).then((result) => {
-            var db = result; //e.target.result;
-            var transac = db.transaction; //e.target.transaction;
-            
-            if (!(db.objectStoreNames.contains(DB_STORE_NAME))) {
-                console.log("DAYLIGHT");
-                db.close();
-                idb.openDB(DB_NAME, 21, {
-                    upgrade(db, oldVersion, newVersion, transaction) {
-                        var fileStore = db.createObjectStore(DB_STORE_NAME);
-                        if (!fileStore.indexNames.contains("timestamp")) {
-                            fileStore.createIndex("timestamp", "timestamp", {
-                                unique: false
-                            })
-                        };
-                    }}).then((result) => { db = result; console.log("DAAA-HAAAAAAAY-LIGHT");});
-                console.log("WON'T FIND US HEEEEEERE"); 
-            }
-        });
     </script>
 </head>
 <body>
@@ -103,60 +42,8 @@
                 
                 // Function that start game
                 function show_script () {
-
                     var db;
-                    console.log("SOME EMPTY FRIEND");
-                    idb.openDB(DB_NAME).then((result) => {
-                    /*request.onsuccess = e => {*/
-                        var db = result; //e.target.result;
-                        var transac = db.transaction; //e.target.transaction;
-                        /*const CUR_VERSION = db.version;
-                        console.log(CUR_VERSION);
-                        if (!(db.objectStoreNames.contains(DB_STORE_NAME))) {
-                            console.log("DAYLIGHT");
-                            db.close();
-                            idb.openDB(DB_NAME, CUR_VERSION+1, {
-                                upgrade(db, oldVersion, newVersion, transaction) {
-                                    db.createObjectStore(DB_STORE_NAME);
-                                }}).then((result) => { db = result; console.log("DAAAAY-HAAAAAAAY-LIGHT"); });
-                            console.log("WON'T FIND US HEEEEEERE"); 
-                        } else {
-                            console.log("DIRTY BLUE BALLOONS");
-                        };*/
-                        
-                        if (!(db.objectStoreNames.contains(DB_STORE_NAME))) {
-                            console.log("DAYLIGHT");
-                            db.close();
-                            idb.openDB(DB_NAME, 21, {
-                                upgrade(db, oldVersion, newVersion, transaction) {
-                                    var fileStore = db.createObjectStore(DB_STORE_NAME);
-                                    if (!fileStore.indexNames.contains("timestamp")) {
-                                        fileStore.createIndex("timestamp", "timestamp", {
-                                            unique: false
-                                        })
-                                    };
-                                }}).then((result) => { db = result; console.log("DAAA-HAAAAAAAY-LIGHT"); });
-                            console.log("WON'T FIND US HEEEEEERE"); 
-                        } /* else {
-                            var fileStore = transac.objectStore(DB_STORE_NAME)
-                            if (!fileStore.indexNames.contains("timestamp")) {
-                                fileStore.createIndex("timestamp", "timestamp", {
-                                    unique: false
-                                });
-                            };
-                            console.log("DIRTY BLUE BALLOONS");
-                        }; */
-                    /*};*/
-                    
-                    // Let us open our database
-                    /* if (!db.objectStoreNames.contains(DB_STORE_NAME)) {
-                        idb.openDB(DB_NAME, DATA_VERSION, {
-                            upgrade(db, oldVersion, newVersion, transaction) {
-                                db.createObjectStore(DB_STORE_NAME)
-                            }}).then((result) => { db = result; } );
-                        // var fileStore = tem.createObjectStore(DB_STORE_NAME);
-                    }; */
-                    setTimeout(function(){
+                    idb.openDB(DB_NAME).then((result) => { db = result; });
                     const tx = db.transaction(DB_STORE_NAME, 'readwrite'); //transaction
                     const store = tx.objectStore(DB_STORE_NAME);
                     var obj_save = false;
@@ -187,11 +74,6 @@
                             brStr.split(' ').forEach((el) => {
                                 fullStr += (el + '&nbsp;');
                             });
-                            /*
-                            var html = '<html><title>WITHOUT script</title><head></head><body><p>' + newStr + '</p></body></html>';
-                            var uri = "data:text/html," + encodeURIComponent(html);
-                            var newWindow = window.open(uri);
-                            */
                             var child = window.open("about:blank");
                             var html = '<html><title>WITHOUT script</title>' +
                             '<head><style>' +
@@ -260,12 +142,6 @@
                             child.document.close();
                         };
                     });
-                    }, 5000);
-                    }); // addedlater
-                    
-                    setTimeout(function(){
-                        console.log('You have tried your best to please everyone.');
-                    }, 3000);
                 };
             </script>
         </div>
