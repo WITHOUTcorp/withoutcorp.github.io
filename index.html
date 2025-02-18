@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WITHOUT terminal virtual machine</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,interactive-widget=resizes-content">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/idb@8/build/umd.js"></script>
+    <script type="text/javascript">
+        var db;
+        const DB_NAME = '/saves';
+        const DATA_VERSION = 20;
+        const DB_STORE_NAME = "FILE_DATA";
+
+        /* request = idb.openDB(DB_NAME);
+        request.onsuccess = function(event) {
+            var db = event.target.result;
+            var transac = db.transaction;
+            console.log(db.version);
+            if (db.version < 20) {
+                const CUR_VERSION = DATA_VERSION
+            } else {
+                const CUR_VERSION = db.version;
+            }
+            if (!(db.objectStoreNames.contains(DB_STORE_NAME))) {
+                console.log("DAYLIGHT");
+                db.close();
+                idb.openDB(DB_NAME, CUR_VERSION+1, {
+                    upgrade(db, oldVersion, newVersion, transaction) {
+                        var fileStore = db.createObjectStore(DB_STORE_NAME);
+                        if (!fileStore.indexNames.contains("timestamp")) {
+                            fileStore.createIndex("timestamp", "timestamp", {
+                                unique: false
+                            });
+                        };
+                    }}).then((result) => { db = result; console.log("DAAAAY-HAAAAAAAY-LIGHT"); });
+                console.log("WON'T FIND US HEEEEEERE"); 
+            } else {
+                var fileStore = transac.objectStore(DB_STORE_NAME);
+                if (!fileStore.indexNames.contains("timestamp")) {
+                    fileStore.createIndex("timestamp", "timestamp", {
+                        unique: false
+                    });
+                };
+                console.log("DIRTY BLUE BALLOONS");
+            };
+            var token = 100000;
+            while (token != 0) {
+                token = token-1;
+            };
+        }; */
+
+        var db;
+        console.log(" --- always a never been truth --- ");
+        idb.openDB(DB_NAME).then((result) => {
+            var db = result; //e.target.result;
+            var transac = db.transaction; //e.target.transaction;
+            
+            if (!(db.objectStoreNames.contains(DB_STORE_NAME))) {
+                console.log("DAYLIGHT");
+                db.close();
+                idb.openDB(DB_NAME, 21, {
+                    upgrade(db, oldVersion, newVersion, transaction) {
+                        var fileStore = db.createObjectStore(DB_STORE_NAME);
+                        if (!fileStore.indexNames.contains("timestamp")) {
+                            fileStore.createIndex("timestamp", "timestamp", {
+                                unique: false
+                            })
+                        };
+                    }}).then((result) => { db = result; console.log("DAAA-HAAAAAAAY-LIGHT");});
+                console.log("WON'T FIND US HEEEEEERE"); 
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="col"> <!-- <div id="inner"> --> <div id="game">
+        <div id="intro" class="overlay">
+            <main>
+                <button id="loadButton" class="startButton">OPEN GAME</button>
+            </main>
+            <script>
+                const loadButton = document.getElementById('loadButton');
+                loadButton.addEventListener('click', open_game);
+                function open_game () {
+                    loadButton.style.visibility = "hidden";
+                    /* document.getElementById('textinput').focus(); */
+                    document.getElementById('intro').remove(); //style.opacity = 0;
+                };
+            </script>
+        </div>
+        <div id="arcade"> <!-- style="visibility:hidden;" -->
+            <main>
+                <button id="openScript" class="arcadeButton" aria-label="Open Script" style="visibility:hidden;"><pre>O   p   e   n                      S   c   ri   p   t</pre></button>
+            </main>
+            <script type="text/javascript">
+                setTimeout(function(){
+                    const openScript = document.getElementById('openScript');
+                    openScript.addEventListener('click', show_script);
+                    openScript.style.visibility = "visible"; // used to be 'arcade' not 'openScript'
+                }, 5000);
+                const main = document.getElementsByTagName('main')[0];
+                
+                // Function that start game
+                function show_script () {
+
+                    var db;
+                    console.log("SOME EMPTY FRIEND");
+                    idb.openDB(DB_NAME).then((result) => {
+                    /*request.onsuccess = e => {*/
+                        var db = result; //e.target.result;
+                        var transac = db.transaction; //e.target.transaction;
+                        /*const CUR_VERSION = db.version;
+                        console.log(CUR_VERSION);
+                        if (!(db.objectStoreNames.contains(DB_STORE_NAME))) {
+                            console.log("DAYLIGHT");
+                            db.close();
+                            idb.openDB(DB_NAME, CUR_VERSION+1, {
+                                upgrade(db, oldVersion, newVersion, transaction) {
+                                    db.createObjectStore(DB_STORE_NAME);
+                                }}).then((result) => { db = result; console.log("DAAAAY-HAAAAAAAY-LIGHT"); });
+                            console.log("WON'T FIND US HEEEEEERE"); 
+                        } else {
+                            console.log("DIRTY BLUE BALLOONS");
+                        };*/
+                        
+                        if (!(db.objectStoreNames.contains(DB_STORE_NAME))) {
+                            console.log("DAYLIGHT");
+                            db.close();
+                            idb.openDB(DB_NAME, 21, {
+                                upgrade(db, oldVersion, newVersion, transaction) {
+                                    var fileStore = db.createObjectStore(DB_STORE_NAME);
+                                    if (!fileStore.indexNames.contains("timestamp")) {
+                                        fileStore.createIndex("timestamp", "timestamp", {
+                                            unique: false
+                                        })
+                                    };
+                                }}).then((result) => { db = result; console.log("DAAA-HAAAAAAAY-LIGHT"); });
+                            console.log("WON'T FIND US HEEEEEERE"); 
+                        } /* else {
+                            var fileStore = transac.objectStore(DB_STORE_NAME)
+                            if (!fileStore.indexNames.contains("timestamp")) {
+                                fileStore.createIndex("timestamp", "timestamp", {
+                                    unique: false
+                                });
+                            };
+                            console.log("DIRTY BLUE BALLOONS");
+                        }; */
+                    /*};*/
+                    
+                    // Let us open our database
+                    /* if (!db.objectStoreNames.contains(DB_STORE_NAME)) {
+                        idb.openDB(DB_NAME, DATA_VERSION, {
+                            upgrade(db, oldVersion, newVersion, transaction) {
+                                db.createObjectStore(DB_STORE_NAME)
+                            }}).then((result) => { db = result; } );
+                        // var fileStore = tem.createObjectStore(DB_STORE_NAME);
+                    }; */
+                    setTimeout(function(){
+                    const tx = db.transaction(DB_STORE_NAME, 'readwrite'); //transaction
+                    const store = tx.objectStore(DB_STORE_NAME);
+                    var obj_save = false;
+                    let sign = window.prompt("PLEASE ENTER FILE NAME (exactly)", "with.scr"); //removed ".toLowerCase()"
+                    if (!sign) {
+                        return;
+                    }
+                    else if (sign.includes('.scr')) {
+                        sign = sign.replace('.scr', '');
+                    };
+                    if (sign == '') {
+                        return;
+                    };
+                    store.get('/saves/' + sign + '.scr').then((result) => {
+                        if (result) {
+                            var obj_save = true;
+                            window.alert("\"" + sign + ".scr\" has been opened. Please allow for the site to redirect you.");
+                            let newStr = String.fromCharCode(...Object.values(result.contents)); /* Buffer.from(Object.values(result.contents)).toString(); */
+                            console.log(newStr);
+                            var brStr = ''
+                            newStr.split(/\n/).forEach((el) => {
+                                let p = document.createElement('p');
+                                let text = document.createTextNode(el);
+                                p.appendChild(text);
+                                brStr += (el + '<br>');
+                            });
+                            var fullStr = ''
+                            brStr.split(' ').forEach((el) => {
+                                fullStr += (el + '&nbsp;');
+                            });
+                            /*
+                            var html = '<html><title>WITHOUT script</title><head></head><body><p>' + newStr + '</p></body></html>';
+                            var uri = "data:text/html," + encodeURIComponent(html);
+                            var newWindow = window.open(uri);
+                            */
+                            var child = window.open("about:blank");
+                            var html = '<html><title>WITHOUT script</title>' +
+                            '<head><style>' +
+                            '@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");' +
+                            '::-webkit-scrollbar { width: 18px; }' +
+                            '::-webkit-scrollbar-track { background: transparent; }' +
+                            '::-webkit-scrollbar-thumb {' +
+                            '  background: #707278;' +
+                            '  border: 6.5px solid transparent;' +
+                            '  background-clip: padding-box;' +
+                            '  border-radius: 25px;' +
+                            '}' +
+                            '::-webkit-scrollbar-track-piece:end {' +
+                            '  background: transparent;' +
+                            '  margin-bottom: 14px; ' +
+                            '}' +
+                            '::-webkit-scrollbar-track-piece:start {' +
+                            '  background: transparent;' +
+                            '  margin-top: 14px;' +
+                            '  margin-left: 14px;' +
+                            '}' +
+                            '::-webkit-scrollbar-corner { display: none; }' +
+                            '.saveButton {' +
+                            '  font-family: DotGothic16;' +
+                            '  color: #cdcdcd !important;' +
+                            '  font-size: 15px;' +
+                            '  width: 120px;' +
+                            '  height: 46px;' +
+                            '  padding-top: 0.5px;' +
+                            '  letter-spacing: 1.75px;' +
+                            '  background-color: #ffffff;' +
+                            '  border-width: thin;' +
+                            '  margin-right: 5px;' +
+                            '  background: #1e1e2c;' +
+                            '  border-radius: 16px;' +
+                            '  border-color: #ecf0f157;' +
+                            '}' +
+                            '</style>' +
+                            '<button type="button" id="save" class="saveButton" title="Save as text file">Save</button>' +
+                            '<script type="text/javascript">' + 
+                            'document.getElementById("save").onclick = function() {' +
+                            ' var content = document.getElementById("source").innerHTML;' +
+                            ' var brStr = "";' +
+                            ' content.split("<br>").forEach((el) => {' +
+                            '  let p = document.createElement("p");' +
+                            '  let text = document.createTextNode(el);' +
+                            '  p.appendChild(text);' +
+                            '  brStr += (el + "\\n");' +
+                            ' });' +
+                            ' var fullStr = "";' +
+                            ' brStr.split("&nbsp;").forEach((el) => {' +
+                            '  fullStr += (el + " ");' +
+                            ' });' +
+                            ' let blobdtMIME = new Blob([fullStr], { type: "text/plain" });' +
+                            ' let url = URL.createObjectURL(blobdtMIME);' +
+                            ' let anele = document.createElement("a");' +
+                            ' anele.setAttribute("download", "with-' + sign + '");' +
+                            ' anele.href = url;' +
+                            ' anele.click();' +
+                            '};<' + '/script></head>' + '<body>' +
+                            '<div style="height:80%;width:71%;margin:auto;position:relative;bottom:-5%;border-radius:25px;' +
+                            'overflow:auto;background-color:#111;color:#ddd;scrollbar-base-color:gold;font-family:DotGothic16;' +
+                            'padding:15px 32px;letter-spacing:2px;border-right:100px transparent;" id="source"><br><br>' +
+                            fullStr + '</div></body></html>';
+                            child.document.write(html);
+                            child.document.close();
+                        };
+                    });
+                    }, 5000);
+                    }); // addedlater
+                    
+                    setTimeout(function(){
+                        console.log('You have tried your best to please everyone.');
+                    }, 3000);
+                };
+            </script>
+        </div>
+        <div id="loadingPane" class="loading">
+            <h2>Loading ...</h2>
+        </div>
+        <canvas id="canvas" height="600" style="cursor:default;"></canvas>
+        <textarea id="textinput" autocapitalize="off" rows="1"></textarea> <!-- style="visibility:hidden" -->
+    </div> <!-- </div> --> </div>
+    <script>window.files = ["with.z8", "with.blb"]</script>
+    <script type="text/javascript" src="interface.js"></script>
+    <script async type="text/javascript" src="sfrotz.js"></script>
+  </body>
+</html>
