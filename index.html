@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,interactive-widget=resizes-content">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/idb@8/build/umd.js"></script>
-    <script type="text/javascript">
+    <script>
+        var db;
         const DB_NAME = '/saves';
-        const DATA_VERSION = 21;
+        const DB_VERSION = 21;
         const DB_STORE_NAME = "FILE_DATA";
+        idb.openDB(DB_NAME, DB_VERSION).then((result) => { db = result });
     </script>
 </head>
 <body>
@@ -32,7 +34,7 @@
             <main>
                 <button id="openScript" class="arcadeButton" aria-label="Open Script" style="visibility:hidden;"><pre>O   p   e   n                      S   c   ri   p   t</pre></button>
             </main>
-            <script type="text/javascript">
+            <script>
                 setTimeout(function(){
                     const openScript = document.getElementById('openScript');
                     openScript.addEventListener('click', show_script);
@@ -42,8 +44,6 @@
                 
                 // Function that start game
                 function show_script () {
-                    var db;
-                    idb.openDB(DB_NAME).then((result) => { db = result; });
                     const tx = db.transaction(DB_STORE_NAME, 'readwrite'); //transaction
                     const store = tx.objectStore(DB_STORE_NAME);
                     var obj_save = false;
