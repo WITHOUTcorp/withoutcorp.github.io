@@ -103,7 +103,7 @@ canvas {
     /* left: -50%; */
     left: 0;
     right: 0;
-    top: 25%;
+    top: 20%;
     
     z-index: 90;
 }
@@ -200,7 +200,7 @@ pre {
     background-color: #ffffff;
     border-width: thick;
     margin: auto;
-    top: 35%;
+    top: 50%;
     background: #2e2e2e;
     border-radius: 10px;
     border-color: #ecf0f157;
