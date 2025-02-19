@@ -60,9 +60,9 @@ html, body {
 }
 
 /* #inner */ #game {
-    display: flex;
+    /* display: flex;
     flex: 1;
-    flex-flow: column;
+    flex-flow: column; */
     justify-content: center;
 }
 
