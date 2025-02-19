@@ -103,6 +103,7 @@ canvas {
     /* left: -50%; */
     left: 0;
     right: 0;
+    top: -25%;
     
     z-index: 100;
 }
@@ -128,7 +129,6 @@ canvas {
     font-size: 15px;
     line-height: 20px;
     word-spacing: -7.5px; */
-    position: absolute;
     color: #cdcdcd !important;
     font-size: 15px;
     width: 120px;
@@ -205,5 +205,5 @@ pre {
 
 .game {
     margin: auto;
-    top: 0px;
+    top: -25%;
 }
