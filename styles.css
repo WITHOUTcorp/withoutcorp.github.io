@@ -103,7 +103,7 @@ canvas {
     /* left: -50%; */
     left: 0;
     right: 0;
-    top: -25%;
+    top: 50%;
     
     z-index: 100;
 }
@@ -138,6 +138,7 @@ canvas {
     background-color: #ffffff;
     border-width: thin;
     margin: 6px 0;
+    top: 14%;
     background: #2e2e2e;
     border-radius: 10px;
     border-color: #ecf0f157;
