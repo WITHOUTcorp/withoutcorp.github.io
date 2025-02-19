@@ -173,9 +173,9 @@ pre {
     font-family: DotGothic16;
     width: 50%;
     margin: auto;
-    left: 22%;
+    left: 23%;
     top: 50%;
-    z-index: 0;
+    z-index: -1;
 }
 
 .startButton {
