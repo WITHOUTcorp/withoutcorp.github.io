@@ -5,13 +5,21 @@
     <title>WITHOUT terminal virtual machine</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,interactive-widget=resizes-content">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/idb@8/build/umd.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/idb@8/build/umd.js"></script> -->
     <script>
         var db;
         const DB_NAME = '/saves';
         const DB_VERSION = 21;
         const DB_STORE_NAME = "FILE_DATA";
-        idb.openDB(DB_NAME, DB_VERSION).then((result) => { db = result });
+        
+        /* idb.openDB(DB_NAME, DB_VERSION).then((result) => { db = result }); //TESTING */
+        const request = window.indexedDB.open(DB_NAME, DB_VERSION);
+        request.onerror = (event) => {
+            console.error("IndexedDB has been blocked. Basically, you can't read transcripts. I'm going to keep pestering you about this.");
+        };
+        request.onsuccess = (event) => {
+            db = event.target.result;
+        };
     </script>
 </head>
 <body>
