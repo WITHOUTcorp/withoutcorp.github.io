@@ -125,7 +125,6 @@ canvas {
 
 .arcade {
     position: relative;
-    top: -25%;
 }
 
 .arcadeButton {
@@ -134,14 +133,19 @@ canvas {
     font-size: 15px;
     line-height: 20px;
     word-spacing: -7.5px; */
-    position: absolute;
-    color: #cdcdcd !important;
-    font-size: 15px;
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-inline: auto; 
+    width: fit-content;
+    
     width: 120px;
     height: 46px;
     padding: 6px;
-    left: 45%
     /* border-width: thin; */
+    
+    color: #cdcdcd !important;
+    font-size: 15px;
     background-color: #ffffff;
     border-width: thin;
     margin: 6px 0;
