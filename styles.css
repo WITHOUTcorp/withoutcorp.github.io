@@ -103,7 +103,7 @@ canvas {
     /* left: -50%; */
     left: 0;
     right: 0;
-    top: 20%;
+    top: 27.5%;
     
     z-index: 90;
 }
@@ -130,7 +130,7 @@ canvas {
 
 .arcadeButton {
     position: absolute; 
-    top: 15%;
+    top: 17.5%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 120px;
