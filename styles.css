@@ -125,7 +125,7 @@ canvas {
 
 .arcade {
     position: relative;
-    top: 10%;
+    top: -25%;
 }
 
 .arcadeButton {
@@ -140,6 +140,7 @@ canvas {
     width: 120px;
     height: 46px;
     padding: 6px;
+    left: 45%
     /* border-width: thin; */
     background-color: #ffffff;
     border-width: thin;
