@@ -130,7 +130,7 @@ canvas {
 
 .arcadeButton {
     position: absolute; 
-    top: 50%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 120px;
@@ -141,7 +141,7 @@ canvas {
     font-size: 15px;
     background-color: #ffffff;
     border-width: thin;
-    margin: 6px 0;
+    /* margin: 6px 0; */
     background: #2e2e2e;
     border-radius: 10px;
     border-color: #ecf0f157;
