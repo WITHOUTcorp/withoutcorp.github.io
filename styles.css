@@ -59,7 +59,7 @@ html, body {
     margin: 12px;
 }
 
-#inner {
+/* #inner */ #game {
     display: flex;
     flex: 1;
     flex-flow: column;
@@ -103,7 +103,7 @@ canvas {
     /* left: -50%; */
     left: 0;
     right: 0;
-    top: 50%;
+    top: 25%;
     
     z-index: 100;
 }
@@ -202,9 +202,4 @@ pre {
     border-radius: 10px;
     border-color: #ecf0f157;
     cursor: pointer;
-}
-
-.game {
-    margin: auto;
-    top: -25%;
 }
