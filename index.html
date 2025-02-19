@@ -140,6 +140,8 @@
                             fullStr + '</div></body></html>';
                             child.document.write(html);
                             child.document.close();
+                        } else {
+                            window.alert("Could not retrieve file \"" + sign + ".scr\". Please check your spelling and capitalisation is correct.");
                         };
                     });
                 };
@@ -150,7 +152,12 @@
         </div>
         <canvas id="canvas" height="600" style="cursor:default;"></canvas>
         <textarea id="textinput" autocapitalize="off" rows="1"></textarea> <!-- style="visibility:hidden" -->
-    </div> <!-- </div> --> </div>
+    </div> <!-- </div> --> 
+    <!-- <div id="query">
+        <p id="arcade-manufacturing">Please enter the name of your script you would like to retrieve.</p>
+        <textarea id="arcade-manufacturing" autocapitalize="off" rows="1"></textarea>
+    </div> -->
+    </div>
     <script>window.files = ["with.z8", "with.blb"]</script>
     <script type="text/javascript" src="interface.js"></script>
     <script async type="text/javascript" src="sfrotz.js"></script>
