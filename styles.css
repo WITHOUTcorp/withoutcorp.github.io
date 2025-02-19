@@ -175,7 +175,7 @@ pre {
     margin: auto;
     left: 22%;
     top: 50%;
-    z-index: 1;
+    z-index: 0;
 }
 
 .startButton {
@@ -187,7 +187,7 @@ pre {
     /* border-width: thin; */
     background-color: #ffffff;
     border-width: thick;
-    margin: 6px 0;
+    margin: auto;
     background: #2e2e2e;
     border-radius: 10px;
     border-color: #ecf0f157;
