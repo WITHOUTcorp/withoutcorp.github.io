@@ -98,7 +98,7 @@ canvas {
     display: block;
     border-radius: 2px;
     left: -50%;
-    z-index: 90;
+    z-index: 100;
 }
 
 #textinput {
@@ -169,13 +169,13 @@ pre {
 .loading {
     background: #111;
     color: #ddd;
-    position: fixed;
+    position: absolute;
     font-family: DotGothic16;
     width: 50%;
     margin: auto;
     left: 23%;
     top: 50%;
-    z-index: -1;
+    z-index: auto;
 }
 
 .startButton {
@@ -188,7 +188,8 @@ pre {
     /* border-width: thin; */
     background-color: #ffffff;
     border-width: thick;
-    margin: 33% 0px;
+    margin: auto;
+    top: 35%;
     background: #2e2e2e;
     border-radius: 10px;
     border-color: #ecf0f157;
