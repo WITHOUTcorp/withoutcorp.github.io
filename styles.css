@@ -36,6 +36,7 @@ html, body {
 }
 
 #col {
+    position: relative;
     display: flex;
     flex: 1;
     flex-flow: column;
@@ -95,9 +96,14 @@ html, body {
 }
 
 canvas {
+    position: absolute;
     display: block;
     border-radius: 2px;
-    left: -50%;
+    
+    /* left: -50%; */
+    left: 0;
+    right: 0;
+    
     z-index: 100;
 }
 
