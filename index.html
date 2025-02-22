@@ -17,9 +17,9 @@
         request.onerror = (event) => {
             console.error("IndexedDB has been blocked. Basically, you can't read transcripts. I'm going to keep pestering you about this.");
         };
-        req.onupgradeneeded = e => {
-            db = e.target.result;
-            var transaction = e.target.transaction;
+        request.onupgradeneeded = (event) => {
+            db = event.target.result;
+            var transaction = event.target.transaction;
             var fileStore;
             if (db.objectStoreNames.contains(DB_STORE_NAME)) {
                 fileStore = transaction.objectStore(DB_STORE_NAME)
