@@ -65,11 +65,16 @@
                     if (sign == '') {
                         return;
                     };
-                    store.get('/saves/' + sign + '.scr').then((result) => {
-                        if (result) {
+                    var request = store.get('/saves/' + sign + '.scr')
+                    request.onerror = (event) => {
+                        window.alert("Could not retrieve file \"" + sign + ".scr\". Please check your spelling and capitalisation is correct.");
+                    };
+                    request.onsuccess = (event) => {
+                        db = event.target.result;
+                        if (db) {
                             var obj_save = true;
                             window.alert("\"" + sign + ".scr\" has been opened. Please allow for the site to redirect you.");
-                            let newStr = String.fromCharCode(...Object.values(result.contents)); /* Buffer.from(Object.values(result.contents)).toString(); */
+                            let newStr = String.fromCharCode(...Object.values(db.contents)); /* Buffer.from(Object.values(result.contents)).toString(); */
                             console.log(newStr);
                             var brStr = ''
                             newStr.split(/\n/).forEach((el) => {
