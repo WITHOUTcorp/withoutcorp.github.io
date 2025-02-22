@@ -21,7 +21,6 @@ visualViewport.addEventListener('resize', () => {
 
 // Mobile input event handlers
 canvas_elem.addEventListener('touchstart', ev => {
-    console.log('event start')
     textinput_elem.focus()
 })
 textinput_elem.addEventListener('input', ev => {
