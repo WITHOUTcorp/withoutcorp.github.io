@@ -2,6 +2,7 @@
 
 const canvas_elem = document.getElementById('canvas')
 const textinput_elem = document.getElementById('textinput')
+canvas_elem.getContext("2d").scale(2,2)
 
 // Prevent iOS from zooming in when focusing input, but allow Android to still pinch zoom
 // As they handle the maximum-scale viewport meta option differently, we will conditionally add it only in iOS
