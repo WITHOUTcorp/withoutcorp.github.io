@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <!-- <script src="https://cdn.jsdelivr.net/npm/idb@8/build/umd.js"></script> -->
     <script>
+        const canvas_elem = document.getElementById('canvas')
+        const ctx = canvas_elem.getContext("2d");
+        ctx.scale(2,2);
+        
         var db;
         const DB_NAME = '/saves';
         const DB_VERSION = 21;
