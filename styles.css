@@ -6,7 +6,7 @@ body {
     margin: 0 auto;
     max-width: 900px;
     text-align: center;
-    overflow-y: hidden; /* controversial */
+    /* overflow-y: hidden; */ /* controversial */
 }
 
 a {
@@ -103,7 +103,7 @@ canvas {
     /* left: -50%; */
     left: 0;
     right: 0;
-    top: 17.5%;
+    top: 15%;
     
     z-index: 90;
 }
@@ -125,12 +125,12 @@ canvas {
 
 .arcade {
     position: relative;
-    top: 15%;
+    top: 10%;
 }
 
 .arcadeButton {
     position: absolute; 
-    top: 10%;
+    top: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 120px;
@@ -185,7 +185,7 @@ pre {
     width: 50%;
     margin: auto;
     left: 23%;
-    top: 50%;
+    top: 27.5%;
     z-index: auto;
 }
 
@@ -206,3 +206,25 @@ pre {
     border-color: #ecf0f157;
     cursor: pointer;
 }
+
+
+
+
+::-webkit-scrollbar { width: 18px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #707278;
+  border: 6.5px solid transparent;
+  background-clip: padding-box;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  margin-bottom: 14px; 
+}
+::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  margin-top: 14px;
+  margin-left: 14px;
+}
+::-webkit-scrollbar-corner { display: none; }
