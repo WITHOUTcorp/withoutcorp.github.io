@@ -16,8 +16,8 @@ visualViewport.addEventListener('resize', () => {
     document.documentElement.style.height = `${height}px`
 
     // Safari might have scrolled weirdly, so try to put it right
-    window.scrollTo(0, 0)
-    setTimeout(() => window.scrollTo(0, 0), 500)
+    window.scrollTo({top: (document.documentElement.scrollHeight / 10)})
+    setTimeout(() => window.scrollTo({top: (document.documentElement.scrollHeight / 10)}), 500)
 })
 
 // Mobile input event handlers
