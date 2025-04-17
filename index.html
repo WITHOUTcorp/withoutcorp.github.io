@@ -150,9 +150,19 @@
                             '  let text = document.createTextNode(el);' +
                             '  p.appendChild(text);' +
                             '  brStr += (el + "\\n");' +
+                            ' });' + 
+                            /**/
+                            ' var ltStr = "";' +
+                            ' brStr.split("&lt;").forEach((el) => {' +
+                            '  ltStr += (el + " ");' +
                             ' });' +
+                            ' var gtStr = "";' +
+                            ' ltStr.split("&gt;").forEach((el) => {' +
+                            '  gtStr += (el + " ");' +
+                            ' });' +
+                            /**/
                             ' var fullStr = "";' +
-                            ' brStr.split("&nbsp;").forEach((el) => {' +
+                            ' gtStr.split("&nbsp;").forEach((el) => {' +
                             '  fullStr += (el + " ");' +
                             ' });' +
                             ' let blobdtMIME = new Blob([fullStr], { type: "text/plain" });' +
